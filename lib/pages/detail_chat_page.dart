@@ -121,13 +121,13 @@ class DetailChatPage extends StatelessWidget {
         children: const [
           ChatBubble(
             isSender: true,
-            text: 'Ping',
+            text: 'Apakah nasi padang tersedia',
+            hasProduct: true,
           ),
           ChatBubble(
             isSender: false,
-            text: 'Ping',
+            text: 'Bungkus gan',
           ),
-          ChatBubble()
         ],
       );
     }
