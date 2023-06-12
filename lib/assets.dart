@@ -2,6 +2,7 @@
 class AssetsImages {
   static const cartVariantPng = 'assets/images/cart-variant.png';
   static const circleUsernamePng = 'assets/images/circle_username.png';
+  static const gambarTextPng = 'assets/images/gambar_text.png';
   static const headsetPng = 'assets/images/headset.png';
   static const iconAccountFullnamePng = 'assets/images/icon_account_fullname.png';
   static const iconAccountProfileNavigationBarPng = 'assets/images/icon_account_profile_navigation_bar.png';
@@ -31,6 +32,7 @@ class AssetsImages {
   static const nasipadangWebp = 'assets/images/nasipadang.webp';
   static const profileIconChatPng = 'assets/images/profile_icon_chat.png';
   static const tambahPng = 'assets/images/tambah.png';
+  static const teleponPng = 'assets/images/telepon.png';
   static const tombolPng = 'assets/images/tombol.png';
   static const tombolXPng = 'assets/images/tombolX.png';
 }
