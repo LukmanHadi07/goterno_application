@@ -29,9 +29,77 @@ class _ProductPageState extends State<ProductPage> {
   ];
 
   int currentIndex = 0;
+  bool isWisLisht = false;
 
   @override
   Widget build(BuildContext context) {
+    Future<void> showSuccesDialog() async {
+      return showDialog(
+          context: context,
+          builder: (BuildContext context) => SizedBox(
+                width: MediaQuery.of(context).size.width - (2 * defaultMargin),
+                child: AlertDialog(
+                  backgroundColor: redColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  content: SingleChildScrollView(
+                      child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Icon(
+                            Icons.close,
+                            color: whiteColor,
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/images/succes.png',
+                        width: 100,
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Text(
+                        'Hore :)',
+                        style: whiteTextStyle.copyWith(
+                            fontSize: 24, fontWeight: semibold),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Text(
+                        'Item berhasil ditambah',
+                        style: whiteTextStyle.copyWith(
+                            fontSize: 16, fontWeight: medium),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Container(
+                        width: 154,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: whiteColor),
+                        child: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Lihat Belanja',
+                              style: redTextStyle.copyWith(
+                                  fontSize: 18, fontWeight: semibold),
+                            )),
+                      )
+                    ],
+                  )),
+                ),
+              ));
+    }
+
     Widget indicator(int index) {
       return Container(
         margin: const EdgeInsets.symmetric(horizontal: 2),
@@ -162,9 +230,35 @@ class _ProductPageState extends State<ProductPage> {
                       )
                     ],
                   )),
-                  Image.asset(
-                    'assets/images/love_white.png',
-                    width: 30,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isWisLisht = !isWisLisht;
+                      });
+                      if (!isWisLisht) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            backgroundColor: whiteColor,
+                            content: Text(
+                              'telah dihapus ke daftar keinginan',
+                              textAlign: TextAlign.center,
+                              style: redTextStyle.copyWith(fontSize: 14),
+                            )));
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            backgroundColor: whiteColor,
+                            content: Text(
+                              'telah ditambahkan ke daftar keinginan',
+                              textAlign: TextAlign.center,
+                              style: redTextStyle.copyWith(fontSize: 14),
+                            )));
+                      }
+                    },
+                    child: Image.asset(
+                      isWisLisht
+                          ? 'assets/images/love_dynamis.png'
+                          : 'assets/images/love_white.png',
+                      width: 30,
+                    ),
                   )
                 ],
               ),
@@ -269,7 +363,9 @@ class _ProductPageState extends State<ProductPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, '/detail_chat');
+                    },
                     child: Container(
                       width: 54,
                       height: 54,
@@ -284,7 +380,9 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                   Expanded(
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        showSuccesDialog();
+                      },
                       child: Container(
                         height: 41,
                         decoration: BoxDecoration(

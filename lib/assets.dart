@@ -29,10 +29,12 @@ class AssetsImages {
   static const iconYourAddresPng = 'assets/images/icon_your_addres.png';
   static const logoGoternoPng = 'assets/images/logo_goterno.png';
   static const logoutPng = 'assets/images/logout.png';
+  static const loveDynamisPng = 'assets/images/love_dynamis.png';
   static const loveWhitePng = 'assets/images/love_white.png';
   static const minPng = 'assets/images/min.png';
   static const nasipadangWebp = 'assets/images/nasipadang.webp';
   static const profileIconChatPng = 'assets/images/profile_icon_chat.png';
+  static const succesPng = 'assets/images/succes.png';
   static const tambahPng = 'assets/images/tambah.png';
   static const teleponPng = 'assets/images/telepon.png';
   static const tombolPng = 'assets/images/tombol.png';
