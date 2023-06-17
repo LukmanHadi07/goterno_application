@@ -5,6 +5,7 @@ class AssetsImages {
   static const cartVariantPng = 'assets/images/cart-variant.png';
   static const circleUsernamePng = 'assets/images/circle_username.png';
   static const gambarTextPng = 'assets/images/gambar_text.png';
+  static const garisPng = 'assets/images/garis.png';
   static const headsetPng = 'assets/images/headset.png';
   static const iconAccountFullnamePng = 'assets/images/icon_account_fullname.png';
   static const iconAccountProfileNavigationBarPng = 'assets/images/icon_account_profile_navigation_bar.png';
@@ -28,6 +29,7 @@ class AssetsImages {
   static const iconStoreLocationPng = 'assets/images/icon_store_location.png';
   static const iconXPng = 'assets/images/icon_x.png';
   static const iconYourAddresPng = 'assets/images/icon_your_addres.png';
+  static const locationPng = 'assets/images/location.png';
   static const logoGoternoPng = 'assets/images/logo_goterno.png';
   static const logoutPng = 'assets/images/logout.png';
   static const loveDynamisPng = 'assets/images/love_dynamis.png';
@@ -37,6 +39,7 @@ class AssetsImages {
   static const nasipadangWebp = 'assets/images/nasipadang.webp';
   static const profileIconChatPng = 'assets/images/profile_icon_chat.png';
   static const removePng = 'assets/images/remove.png';
+  static const storeLocationPng = 'assets/images/store_location.png';
   static const succesPng = 'assets/images/succes.png';
   static const tambahPng = 'assets/images/tambah.png';
   static const teleponPng = 'assets/images/telepon.png';

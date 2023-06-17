@@ -34,6 +34,7 @@ class CheckoutCard extends StatelessWidget {
                   'Nasi Padang',
                   style: blackTextStyle.copyWith(
                       fontWeight: semibold, fontSize: 18),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   'Rp.50.000',
