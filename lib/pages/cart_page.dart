@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:goterno_app/themes.dart';
+import 'package:goterno_app/widgets/cart_card.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+  const CartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Widget headerCart() {
-      return AppBar(
-        backgroundColor: redColor,
-        centerTitle: true,
-        title: Text(
-          'You Cart',
-          style: whiteTextStyle.copyWith(fontSize: 20, fontWeight: semibold),
-        ),
-      );
-    }
-
     Widget emptyCart() {
       return Expanded(
         child: Center(
@@ -65,10 +55,83 @@ class CartPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return ListView(
+        children: [
+          CartCard(),
+        ],
+      );
+    }
+
+    Widget cusstomBottomNav() {
+      return Container(
+        height: 168,
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Sub Total',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 16, fontWeight: semibold),
+                  ),
+                  Text(
+                    'Rp.100.000',
+                    style: redTextStyle.copyWith(
+                        fontSize: 16, fontWeight: semibold),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/checkout');
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                width: double.infinity,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: redColor, borderRadius: BorderRadius.circular(10)),
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Continue To Checkout',
+                      style: whiteTextStyle.copyWith(
+                          fontSize: 16, fontWeight: semibold),
+                    ),
+                    const Icon(
+                      Icons.arrow_forward,
+                      color: whiteColor,
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
-      body: Column(
-        children: [headerCart(), emptyCart()],
+      appBar: AppBar(
+        backgroundColor: redColor,
+        centerTitle: true,
+        title: Text(
+          'You Cart',
+          style: whiteTextStyle.copyWith(fontSize: 20, fontWeight: semibold),
+        ),
       ),
+      body: content(),
+      bottomNavigationBar: cusstomBottomNav(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:goterno_app/pages/cart_page.dart';
+import 'package:goterno_app/pages/checkout_page.dart';
 import 'package:goterno_app/pages/detail_chat_page.dart';
 import 'package:goterno_app/pages/edit_profile_page.dart';
 import 'package:goterno_app/pages/home/main_page.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/edit-profile': (context) => const EditProfilPage(),
         '/product-page': (context) => const ProductPage(),
         '/cart-page': (context) => const CartPage(),
+        '/checkout': (context) => const CheckoutPage(),
       },
     );
   }
